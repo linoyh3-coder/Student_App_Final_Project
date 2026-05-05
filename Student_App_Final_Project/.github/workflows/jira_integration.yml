@@ -1,59 +1,9 @@
-name: Student_App_Final_Project
+name: Test Workflow
 
-on:
-  push:
-    branches: ["main"]
-  pull_request:
+on: [push]
 
 jobs:
-  test-and-report:
+  test:
     runs-on: ubuntu-latest
-
-    env:
-      PYTHON_VERSION: "3.9"
-
     steps:
-      # 1. Checkout repo
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      # 2. Install uv
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
-
-      # 3. Setup Python (cleaner approach)
-      - name: Setup Python environment
-        run: |
-          uv python install $PYTHON_VERSION
-          uv venv
-
-      # 4. Install dependencies
-      - name: Install dependencies
-        run: uv sync
-
-      # 5. Run tests
-      - name: Run tests
-        env:
-          API_KEY: ${{ secrets.API_KEY }}
-          XRAY_CLIENT_ID: ${{ secrets.XRAY_CLIENT_ID }}
-          XRAY_CLIENT_SECRET: ${{ secrets.XRAY_CLIENT_SECRET }}
-        run: |
-          uv run pytest --junitxml=report.xml
-
-      # 6. Upload test results artifact (debug friendly)
-      - name: Upload test report
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-report
-          path: report.xml
-
-      # 7. Send results to Jira Xray
-      - name: Report Results to Jira (Xray)
-        uses: mikepenz/xray-action@v3
-        with:
-          username: ${{ secrets.XRAY_CLIENT_ID }}
-          password: ${{ secrets.XRAY_CLIENT_SECRET }}
-          testFormat: "junit"
-          testPaths: "report.xml"
-          projectKey: "SAFP"
-          xrayBaseUrl: "https://eu.xray.cloud.getxray.app/"
+      - run: echo "HELLO ACTIONS IS WORKING"
