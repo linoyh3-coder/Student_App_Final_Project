@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="4" failures="0" skipped="0" tests="4" time="17.811" timestamp="2026-05-05T21:50:18.623938+03:00" hostname="Linoy"><testcase classname="" name="tests.test_asos" time="0.000"><error message="collection failure">tests\test_asos.py:19: in &lt;module&gt;
+    search = wait.until(
+..\Student_App_Final_Project\.venv\Lib\site-packages\selenium\webdriver\support\wait.py:112: in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+..\Student_App_Final_Project\.venv\Lib\site-packages\selenium\webdriver\support\expected_conditions.py:92: in _predicate
+    return driver.find_element(*locator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\Student_App_Final_Project\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py:823: in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\Student_App_Final_Project\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py:450: in execute
+    self.error_handler.check_response(response)
+..\Student_App_Final_Project\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py:232: in check_response
+    raise exception_class(message, screen, stacktrace)
+E   selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+E   from unknown error: web view not found
+E     (Session info: chrome=147.0.7727.138)
+E   Stacktrace:
+E   	chromedriver!GetHandleVerifier [0x7ff7ad37a8e5+14e45]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad37a950+14eb0]
+E   	chromedriver!(No symbol) [0x7ff7ad0ed6ed]
+E   	chromedriver!(No symbol) [0x7ff7ad0c3dc2]
+E   	chromedriver!(No symbol) [0x7ff7ad176f16]
+E   	chromedriver!(No symbol) [0x7ff7ad194122]
+E   	chromedriver!(No symbol) [0x7ff7ad1390e8]
+E   	chromedriver!(No symbol) [0x7ff7ad139fc3]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad690149+32a6a9]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad68a715+324c75]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad6ac012+346572]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad397cb5+32215]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad3a087c+3addc]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad3840e4+1e644]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad384296+1e7f6]
+E   	chromedriver!GetHandleVerifier [0x7ff7ad368737+2c97]
+E   	KERNEL32!BaseThreadInitThunk [0x7ff88b84e8d7+17]
+E   	ntdll!RtlUserThreadStart [0x7ff88d36c3fc+2c]</error></testcase><testcase classname="" name="tests.test_student_db" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Programing\Learn to code\CI-CD QA project\CI-CD-project\tests\test_student_db.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\linoy\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_student_db.py:2: in &lt;module&gt;
+    from students_app_hitech_school.app import db  # שכבת ה-DB שעליה אנחנו בודקים
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ModuleNotFoundError: No module named 'students_app_hitech_school'</error></testcase><testcase classname="" name="tests.test_student_service" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Programing\Learn to code\CI-CD QA project\CI-CD-project\tests\test_student_service.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\linoy\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_student_service.py:5: in &lt;module&gt;
+    import students_app_hitech_school.app.service as service
+E   ModuleNotFoundError: No module named 'students_app_hitech_school'</error></testcase><testcase classname="" name="tests.test_students_web_api" time="0.000"><error message="collection failure">ImportError while importing test module 'C:\Programing\Learn to code\CI-CD QA project\CI-CD-project\tests\test_students_web_api.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+C:\Users\linoy\AppData\Local\Python\pythoncore-3.14-64\Lib\importlib\__init__.py:88: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_students_web_api.py:3: in &lt;module&gt;
+    from students_app_hitech_school.app import db
+E   ModuleNotFoundError: No module named 'students_app_hitech_school'</error></testcase></testsuite></testsuites>
